@@ -9,14 +9,14 @@ module.exports = (bot) => {
         .readdirSync(`./components/${folder}`)
         .filter((file) => file.endsWith(".js"));
 
-      const { buttons, modals } = bot;
+      const { buttons, modals, menus } = bot;
 
       switch (folder) {
         case "buttons":
           for (const file of componentFiles) {
             const button = require(`../../components/${folder}/${file}`);
             buttons.set(button.data.name, button);
-            console.log(`✔ - Added "${button.data.name}" modal to collection.`);
+            console.log(`✔ - Added "${button.data.name}" to buttons collection.`);
           }
           break;
 
@@ -24,7 +24,15 @@ module.exports = (bot) => {
           for (const file of componentFiles) {
             const modal = require(`../../components/${folder}/${file}`);
             modals.set(modal.data.name, modal);
-            console.log(`✔ - Added "${modal.data.name}" modal to collection.`);
+            console.log(`✔ - Added "${modal.data.name}" to modals collection.`);
+          }
+          break;
+
+        case "menus":
+          for (const file of componentFiles) {
+            const menu = require(`../../components/${folder}/${file}`);
+            menus.set(menu.data.name, menu);
+            console.log(`✔ - Added "${menu.data.name}" to menus collection.`);
           }
           break;
 

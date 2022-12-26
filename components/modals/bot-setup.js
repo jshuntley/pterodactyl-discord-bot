@@ -6,14 +6,13 @@ module.exports = {
   },
 
   async execute(interaction, bot) {
-    console.log('⚠ - Executing modal.')
-    const settings = {
+    const config = {
       panelfqdn: interaction.fields.getTextInputValue("panelfqdn"),
       pteroapikey: interaction.fields.getTextInputValue("pteroapikey"),
-      serverid: interaction.fields.getTextInputValue("serverid"),
+      serverid: interaction.fields.getTextInputValue("serverid")
     };
 
-    fs.writeFile("settings.json", JSON.stringify(settings), (error) => {
+    fs.writeFile("config.json", JSON.stringify(config), (error) => {
       if (error) {
         console.log(error);
       };
@@ -21,7 +20,7 @@ module.exports = {
 
     await interaction.reply({
       content:
-        "Pterodactyl settings saved!\nThe bot will now restart.",
+        "Pterodactyl settings saved to config.json!\nThe bot will now restart.",
     });
   },
 };

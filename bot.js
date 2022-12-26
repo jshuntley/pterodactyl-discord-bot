@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { token } = process.env;
+const { token, guild, channelId, message } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
@@ -8,6 +8,7 @@ const bot = new Client({ intents: GatewayIntentBits.Guilds });
 bot.commands = new Collection();
 bot.buttons = new Collection();
 bot.modals = new Collection();
+bot.menus = new Collection();
 
 bot.commandArray = [];
 

@@ -1,15 +1,15 @@
 const {
-    SlashCommandBuilder,
-    ModalBuilder,
-    ActionRowBuilder,
-    TextInputBuilder,
-    TextInputStyle,
-  } = require("discord.js");
+  SlashCommandBuilder,
+  ModalBuilder,
+  ActionRowBuilder,
+  TextInputBuilder,
+  TextInputStyle,
+} = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("bot-setup")
-    .setDescription("Set up Pterodactyl server monitoring."),
+    .setDescription("**CAUTION!** Set up Pterodactyl server monitoring."),
 
   async execute(interaction, bot) {
     const modal = new ModalBuilder()
@@ -40,7 +40,11 @@ module.exports = {
     const secondActionRow = new ActionRowBuilder().addComponents(apiInput);
     const thirdActionRow = new ActionRowBuilder().addComponents(serverInput);
 
-    modal.addComponents(firstActionRow, secondActionRow, thirdActionRow);
+    modal.addComponents(
+      firstActionRow,
+      secondActionRow,
+      thirdActionRow,
+    );
     await interaction.showModal(modal);
   },
 };

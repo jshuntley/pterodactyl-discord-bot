@@ -44,6 +44,17 @@ module.exports = {
       } catch (err) {
         console.error(err);
       }
+    } else if (interaction.isStringSelectMenu()) {
+      const { menus } = bot;
+      const { customId } = interaction;
+      const menu = menus.get(customId);
+      if (!menu) return new Error("⛔ - No code for this menu.");
+
+      try {
+        await menu.execute(interaction, bot);
+      } catch (error) {
+        console.error(error);
+      }
     }
   },
 };

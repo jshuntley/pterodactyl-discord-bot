@@ -22,13 +22,13 @@ module.exports = (bot) => {
     const guildId = "1055887588864557108";
     const rest = new REST({ version: "9" }).setToken(process.env.token);
     try {
-      console.log("Refreshing bot commands.");
+      console.log("🚧 - Refreshing bot commands.");
 
       await rest.put(Routes.applicationGuildCommands(botId, guildId), {
         body: bot.commandArray,
       });
 
-      console.log("Commands successfully added.");
+      console.log("👍 - Commands successfully added.");
     } catch (error) {
       console.error(error);
     }
