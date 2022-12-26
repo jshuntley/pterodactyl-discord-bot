@@ -5,16 +5,15 @@ const {
   TextInputBuilder,
   TextInputStyle,
 } = require("discord.js");
-const fs = require("node:fs");
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("bot-setup")
-    .setDescription("Set up Pterodactyl server monitoring."),
+    .setDescription("**CAUTION!** Set up Pterodactyl server monitoring."),
 
-  async execute(interaction) {
+  async execute(interaction, bot) {
     const modal = new ModalBuilder()
-      .setCustomId("setup-modal")
+      .setCustomId("bot-setup")
       .setTitle("Bot Setup");
     const fqdnInput = new TextInputBuilder()
       .setCustomId("panelfqdn")
@@ -41,7 +40,11 @@ module.exports = {
     const secondActionRow = new ActionRowBuilder().addComponents(apiInput);
     const thirdActionRow = new ActionRowBuilder().addComponents(serverInput);
 
-    modal.addComponents(firstActionRow, secondActionRow, thirdActionRow);
+    modal.addComponents(
+      firstActionRow,
+      secondActionRow,
+      thirdActionRow,
+    );
     await interaction.showModal(modal);
   },
 };
