@@ -8,7 +8,7 @@ module.exports = {
 
     if (config.initialized == true && config.messageId != "") {
       setInterval(async () => {
-        bot.serverStatus();
+        bot.statusUpdate();
       }, 60000); //Set time here, currently 1m
     } else if (config.initialized == true && config.messageId == "") {
       bot.welcomeMessage();

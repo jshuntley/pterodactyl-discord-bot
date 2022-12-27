@@ -10,11 +10,11 @@ module.exports = {
       try {
         await command.execute(interaction, bot);
       } catch (error) {
-        console.error(error);
         await interaction.reply({
           content: `⛔ - Something went wrong during command execution.`,
           ephemeral: true,
         });
+        console.error(error);
       }
     } else if (interaction.isButton()) {
       const { buttons } = bot;
