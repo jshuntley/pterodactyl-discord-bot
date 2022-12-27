@@ -12,9 +12,7 @@ module.exports = (bot) => {
     const channel = await bot.channels.cache.get(config.channelId);
     const msg = await channel.messages.fetch(config.messageId);
 
-    ptero_client
-    .getServerStatus(config.serverid)
-    .then(function (serverStatus) {
+    ptero_client.getServerStatus(config.serverid).then(function (serverStatus) {
       if (serverStatus == "running") {
         const embed = new EmbedBuilder()
           .setColor("#09A837")
@@ -22,7 +20,11 @@ module.exports = (bot) => {
           .setDescription("Server is running - :green_circle: ")
           .setTimestamp()
           .setFooter({ text: "You're welcome for my service!" });
-        msg.edit({ embeds: [embed] });
+        msg.edit({
+          content: ``,
+          embeds: [embed],
+          components: [],
+        });
       } else if (serverStatus == "offline") {
         const embed = new EmbedBuilder()
           .setColor("#ff0000")
@@ -30,7 +32,11 @@ module.exports = (bot) => {
           .setDescription("Server is offline - :red_circle: ")
           .setTimestamp()
           .setFooter({ text: "Bummer dude 😢" });
-        msg.edit({ embeds: [embed] });
+        msg.edit({
+          content: ``,
+          embeds: [embed],
+          components: [],
+        });
       } else if (serverStatus == "starting") {
         const embed = new EmbedBuilder()
           .setColor("#FBC42D")
@@ -38,7 +44,11 @@ module.exports = (bot) => {
           .setDescription("Server is booting up - :yellow_circle: ")
           .setTimestamp()
           .setFooter({ text: "Get ready to rock! 😎" });
-        msg.edit({ embeds: [embed] });
+        msg.edit({
+          content: ``,
+          embeds: [embed],
+          components: [],
+        });
       }
     });
   };
