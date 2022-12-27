@@ -15,7 +15,7 @@ In the Discord developer portal, navigate to your_application > OAuth2 > URL Gen
 ### Running the Bot
 Navigate to the root folder (server-status-discord-bot if you cloned this repo)
 run npm i to install the required packages
-run `nodemon bot.js` to get er goin - or `node bot.js`
+run `npm start` to get er goin
 
 You\'re going to need:
 - your Pterodactyl FQDN
@@ -27,7 +27,7 @@ Make sure you\'ve got developer mode enabled for Discord. You\'re going to need 
 
 The bot should create a post in your Discord server\'s "general" channel and show you a button to input all the above info. The info will be saved locally in the config.json file.
 
-The bot will restart several times automatically if you ran it with nodemon. Otherwise, you\'ll need to ctrl-c once after you enter your info in the modal and again after the first post in your desired channel.
+The bot will restart several times automatically during setup.
 
 That\'s it! The bot should do the rest.
 
