@@ -9,7 +9,10 @@ module.exports = {
     const config = {
       panelfqdn: interaction.fields.getTextInputValue("panelfqdn"),
       pteroapikey: interaction.fields.getTextInputValue("pteroapikey"),
-      serverid: interaction.fields.getTextInputValue("serverid")
+      serverid: interaction.fields.getTextInputValue("serverid"),
+      channelId: interaction.fields.getTextInputValue("channelid"),
+      messageId: "",
+      initialized: true
     };
 
     fs.writeFile("config.json", JSON.stringify(config), (error) => {

@@ -6,12 +6,14 @@ module.exports = {
   async execute(bot) {
     console.log(`👍 - ${bot.user.tag}`);
 
-    if (config.initialized) {
+    if (config.initialized == true && config.messageId != "") {
       setInterval(async () => {
         bot.serverStatus();
       }, 60000); //Set time here, currently 1m
-    } else {
-      bot.initMessage();
+    } else if (config.initialized == true && config.messageId == "") {
+      bot.welcomeMessage();
+    }else {
+      bot.onboarding();
     }
   },
 };
