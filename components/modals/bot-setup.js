@@ -5,7 +5,7 @@ module.exports = {
     name: `bot-setup`
   },
 
-  async execute(interaction, bot) {
+  async execute(interaction) {
     const config = {
       panelfqdn: interaction.fields.getTextInputValue("panelfqdn"),
       pteroapikey: interaction.fields.getTextInputValue("pteroapikey"),

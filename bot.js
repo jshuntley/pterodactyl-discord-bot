@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { token, guild, channelId, message } = process.env;
+const { token } = process.env;
 const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const fs = require("fs");
 
