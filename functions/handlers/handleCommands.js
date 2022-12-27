@@ -17,6 +17,7 @@ module.exports = (bot) => {
       for (const file of commandFiles) {
         const command = require(`../../commands/${folder}/${file}`);
         commands.set(command.data.name, command);
+        console.log(`✅ - Added "${command.data.name}" to available commands.`);
         commandArray.push(command.data.toJSON());
       }
     }
