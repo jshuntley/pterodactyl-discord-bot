@@ -15,7 +15,7 @@ In the Discord developer portal, navigate to your_application > OAuth2 > URL Gen
 ### Running the Bot
 Navigate to the root folder (server-status-discord-bot if you cloned this repo)
 run npm i to install the required packages
-run nodemon bot.js to get er goin - or node bot.js
+run `nodemon bot.js` to get er goin - or `node bot.js`
 
 You\'re going to need:
 - your Pterodactyl FQDN
