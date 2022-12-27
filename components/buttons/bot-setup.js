@@ -30,14 +30,14 @@ module.exports = {
 
     const serverInput = new TextInputBuilder()
       .setCustomId("serverid")
-      .setLabel("Server ID")
+      .setLabel("Pterodactyl Server ID")
       .setStyle(TextInputStyle.Short)
       .setPlaceholder("8umdgjxc")
       .setRequired(true);
 
     const channelInput = new TextInputBuilder()
       .setCustomId("channelid")
-      .setLabel("Channel ID")
+      .setLabel("Discord Channel ID")
       .setStyle(TextInputStyle.Short)
       .setPlaceholder("1055887590617788509")
       .setRequired(true);

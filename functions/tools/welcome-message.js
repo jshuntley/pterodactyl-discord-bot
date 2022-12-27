@@ -27,11 +27,11 @@ module.exports = (bot) => {
       });
 
     channel.messages.pin(initMessageId);
+    
 
     let cfg = fs.readFileSync("./config.json");
     let data = JSON.parse(cfg);
     data.messageId = initMessageId;
-
 
     fs.writeFileSync('./config.json', JSON.stringify(data), (error) => {
       if (error) {
