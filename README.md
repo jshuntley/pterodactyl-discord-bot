@@ -34,3 +34,7 @@ That\'s it! The bot should do the rest.
 ### Future Features
 - Dockerization
 - multiple server tracking
+- More Pterodactyl functions
+	- server starts, stops, restarts
+	- resource utilization
+	- user info
