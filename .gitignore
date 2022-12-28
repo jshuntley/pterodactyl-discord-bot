@@ -1,6 +1,5 @@
 node_modules
-server-configs
+server-configs/*
 
-config.json
 .env
 nodemon.json
