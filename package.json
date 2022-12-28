@@ -4,7 +4,10 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "start": "nodemon bot.js"
+    "start": "nodemon bot.js",
+    "push": "npm version patch && git push",
+    "push-minor": "npm version minor && git push",
+    "push-major": "npm version major && git push"
   },
   "author": "NineZulu",
   "license": "ISC",
