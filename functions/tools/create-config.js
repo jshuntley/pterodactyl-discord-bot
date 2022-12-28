@@ -1,4 +1,3 @@
-const config = require("../../config.json");
 const {
   ModalBuilder,
   ActionRowBuilder,
@@ -7,14 +6,21 @@ const {
 } = require("discord.js");
 
 module.exports = (bot) => {
-  bot.statusUpdate = async () => {
+  bot.createConfig = async (interaction) => {
     const modal = new ModalBuilder()
-      .setCustomId("bot-setup")
-      .setTitle("Bot Setup");
+      .setCustomId("create-config")
+      .setTitle("Create Config");
+
+    const configName = new TextInputBuilder()
+      .setCustomId("configName")
+      .setLabel("Game Name")
+      .setStyle(TextInputStyle.Short)
+      .setPlaceholder("Valheim")
+      .setRequired(true);
 
     const fqdnInput = new TextInputBuilder()
       .setCustomId("panelfqdn")
-      .setLabel("Panel FQDN")
+      .setLabel("Pterodactyl Panel FQDN")
       .setStyle(TextInputStyle.Short)
       .setPlaceholder("http(s)://example.com")
       .setRequired(true);
@@ -40,16 +46,18 @@ module.exports = (bot) => {
       .setPlaceholder("1055887590617788509")
       .setRequired(true);
 
-    const firstActionRow = new ActionRowBuilder().addComponents(fqdnInput);
-    const secondActionRow = new ActionRowBuilder().addComponents(apiInput);
-    const thirdActionRow = new ActionRowBuilder().addComponents(serverInput);
-    const fourthActionRow = new ActionRowBuilder().addComponents(channelInput);
+    const cfgName = new ActionRowBuilder().addComponents(configName);
+    const fqdn = new ActionRowBuilder().addComponents(fqdnInput);
+    const api = new ActionRowBuilder().addComponents(apiInput);
+    const server = new ActionRowBuilder().addComponents(serverInput);
+    const channel = new ActionRowBuilder().addComponents(channelInput);
 
     modal.addComponents(
-      firstActionRow,
-      secondActionRow,
-      thirdActionRow,
-      fourthActionRow
+      cfgName,
+      fqdn,
+      api,
+      server,
+      channel
     );
     await interaction.showModal(modal);
   };

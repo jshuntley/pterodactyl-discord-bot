@@ -12,7 +12,6 @@ module.exports = (bot) => {
     const channel = await bot.channels.cache.get(config.channelId);
 
     const usages = await ptero_client.getServerUsages(config.serverid);
-    //   channel.send(response);
     const resources = usages.resources;
 
     const embed = new EmbedBuilder()
@@ -35,12 +34,3 @@ module.exports = (bot) => {
     await channel.send({ embeds: [embed] }).catch(console.error);
   };
 };
-
-// resources: {
-//     memory_bytes: 2034323456,
-//     cpu_absolute: 25.106,
-//     disk_bytes: 1930465366,
-//     network_rx_bytes: 184344110,
-//     network_tx_bytes: 28202524,
-//     uptime: 163998274
-//   }

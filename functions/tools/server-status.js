@@ -18,7 +18,7 @@ module.exports = (bot) => {
           const embed = new EmbedBuilder()
             .setColor("#09A837")
             .setTitle("Server Status")
-            .setDescription("Server is running - :green_circle: ")
+            .setDescription("Server is running - 🟢 ")
             .setTimestamp()
             .setFooter({ text: "You're welcome for my service!" });
           channel.send({
@@ -28,7 +28,7 @@ module.exports = (bot) => {
           const embed = new EmbedBuilder()
             .setColor("#ff0000")
             .setTitle("Server Status")
-            .setDescription("Server is offline - :red_circle: ")
+            .setDescription("Server is offline - 🛑 ")
             .setTimestamp()
             .setFooter({ text: "Bummer dude 😢" });
           channel.send({
@@ -38,7 +38,7 @@ module.exports = (bot) => {
           const embed = new EmbedBuilder()
             .setColor("#FBC42D")
             .setTitle("Server Status")
-            .setDescription("Server is booting up - :yellow_circle: ")
+            .setDescription("Server is booting up - 🚀 ")
             .setTimestamp()
             .setFooter({ text: "Get ready to rock! 😎" });
           channel.send({

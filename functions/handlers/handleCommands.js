@@ -1,6 +1,3 @@
-require("dotenv").config();
-
-const { botId } = process.env;
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const fs = require("fs");
@@ -17,7 +14,7 @@ module.exports = (bot) => {
       for (const file of commandFiles) {
         const command = require(`../../commands/${folder}/${file}`);
         commands.set(command.data.name, command);
-        console.log(`✅ - Added "${command.data.name}" to available commands.`);
+        console.log(`✔ - Added "${command.data.name}" to available commands.`);
         commandArray.push(command.data.toJSON());
       }
     }
@@ -26,7 +23,7 @@ module.exports = (bot) => {
     try {
       console.log("🚧 - Refreshing bot commands.");
 
-      await rest.put(Routes.applicationCommands(botId), {
+      await rest.put(Routes.applicationCommands(process.env.botId), {
         body: bot.commandArray,
       });
 

@@ -1,9 +1,9 @@
 module.exports = {
   data: {
-    name: `bot-setup`,
+    name: `create-config`,
   },
 
   async execute(interaction, bot) {
-    bot.createConfig();
-  },
+    bot.createConfig(interaction);
+   }
 };
