@@ -1,14 +1,13 @@
-const config = require("../../config.json");
-
 const { EmbedBuilder } = require("discord.js");
 const Nodeactyl = require("nodeactyl");
-const ptero_client = new Nodeactyl.NodeactylClient(
-  config.panelfqdn,
-  config.pteroapikey
-);
 
 module.exports = (bot) => {
-  bot.serverUsage = async () => {
+  bot.serverUsage = async (config) => {
+    const ptero_client = new Nodeactyl.NodeactylClient(
+      config.panelfqdn,
+      config.pteroapikey
+    );
+
     const channel = await bot.channels.cache.get(config.channelId);
 
     const usages = await ptero_client.getServerUsages(config.serverid);
@@ -21,7 +20,7 @@ module.exports = (bot) => {
         `Memory: ` +
           (resources.memory_bytes / 1073741824).toFixed(2) +
           `GB\nCPU use: ` +
-          (resources.cpu_absolute).toFixed(2) +
+          resources.cpu_absolute.toFixed(2) +
           `%\nDisk use: ` +
           (resources.disk_bytes / 1073741824).toFixed(2) +
           `GB\n Server Uptime: ` +
