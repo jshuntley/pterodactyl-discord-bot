@@ -1,10 +1,9 @@
-const config = require("../../config.json");
 const fs = require("fs");
 
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = (bot) => {
-  bot.welcomeMessage = async () => {
+  bot.welcomeMessage = async (config) => {
     const channel = await bot.channels.cache.get(config.channelId);
 
     const embed = new EmbedBuilder()
@@ -28,11 +27,13 @@ module.exports = (bot) => {
 
     channel.messages.pin(initMessageId);
 
-    let cfg = fs.readFileSync("./config.json");
+    const filePath = `./server-configs/${config.name}_${config.serverid}.json`;
+
+    let cfg = fs.readFileSync(filePath);
     let data = JSON.parse(cfg);
     data.messageId = initMessageId;
 
-    fs.writeFileSync("./config.json", JSON.stringify(data), (error) => {
+    fs.writeFileSync(filePath, JSON.stringify(data), (error) => {
       if (error) {
         console.log(error);
       }

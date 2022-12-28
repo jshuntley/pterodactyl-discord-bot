@@ -14,7 +14,7 @@ In the Discord developer portal, navigate to your_application > OAuth2 > URL Gen
 
 ### Running the Bot
 Navigate to the root folder (server-status-discord-bot if you cloned this repo)
-run npm i to install the required packages
+run `npm i` to install the required packages
 run `npm start` to get er goin
 
 You\'re going to need:

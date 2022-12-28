@@ -1,19 +1,22 @@
-const config = require("../../config.json");
+const fs = require("fs");
 
 module.exports = {
   name: "ready",
   once: true,
   async execute(bot) {
-    console.log(`👍 - ${bot.user.tag}`);
+    console.log(`🤖 - ${bot.user.tag}`);
 
-    if (config.initialized == true && config.messageId != "") {
-      setInterval(async () => {
-        bot.statusUpdate();
-      }, 60000); //Set time here, currently 1m
-    } else if (config.initialized == true && config.messageId == "") {
-      bot.welcomeMessage();
-    }else {
+    const configFolder = fs.readdirSync("./server-configs");
+
+    if (configFolder == "") {
       bot.onboarding();
+    } else {
+      setInterval(async () => {
+        configFolder.forEach((file) => {
+          const cfg = require(`../../server-configs/${file}`);
+          bot.statusUpdate(cfg);
+        });
+      }, 10000); // Set to 1m
     }
   },
 };

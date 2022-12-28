@@ -12,7 +12,6 @@ bot.menus = new Collection();
 
 bot.commandArray = [];
 
-
 const functionFolders = fs.readdirSync("./functions");
 for (const folder of functionFolders) {
   const functionFiles = fs
@@ -25,6 +24,5 @@ for (const folder of functionFolders) {
 bot.handleEvents();
 bot.handleCommands();
 bot.handleComponents();
-
 
 bot.login(token);

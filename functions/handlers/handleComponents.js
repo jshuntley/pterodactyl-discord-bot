@@ -16,7 +16,7 @@ module.exports = (bot) => {
           for (const file of componentFiles) {
             const button = require(`../../components/${folder}/${file}`);
             buttons.set(button.data.name, button);
-            console.log(`✅ - Added "${button.data.name}" to buttons collection.`);
+            console.log(`✔ - Added "${button.data.name}" to buttons collection.`);
           }
           break;
 
@@ -24,7 +24,7 @@ module.exports = (bot) => {
           for (const file of componentFiles) {
             const modal = require(`../../components/${folder}/${file}`);
             modals.set(modal.data.name, modal);
-            console.log(`✅ - Added "${modal.data.name}" to modals collection.`);
+            console.log(`✔ - Added "${modal.data.name}" to modals collection.`);
           }
           break;
 
@@ -32,7 +32,7 @@ module.exports = (bot) => {
           for (const file of componentFiles) {
             const menu = require(`../../components/${folder}/${file}`);
             menus.set(menu.data.name, menu);
-            console.log(`✅ - Added "${menu.data.name}" to menus collection.`);
+            console.log(`✔ - Added "${menu.data.name}" to menus collection.`);
           }
           break;
 
