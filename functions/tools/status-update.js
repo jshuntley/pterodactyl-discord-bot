@@ -7,9 +7,7 @@ module.exports = (bot) => {
       await bot.welcomeMessage(config);
     } else {
       const channel = await bot.channels.cache.get(config.channelId);
-      console.log(`${config.name}: channel: ${config.channelId}`);
       const msg = await channel.messages.fetch(config.messageId);
-      console.log(`${config.name}: message: ${config.messageId}`);
 
       const ptero_client = new Nodeactyl.NodeactylClient(
         config.panelfqdn,
@@ -25,7 +23,7 @@ module.exports = (bot) => {
               .setTitle("Server Status")
               .setDescription("Server is running - 🟢 ")
               .setTimestamp()
-              .setFooter({ text: `${config.configName}` });
+              .setFooter({ text: `${config.name}` });
             msg.edit({
               content: ``,
               embeds: [embed],
