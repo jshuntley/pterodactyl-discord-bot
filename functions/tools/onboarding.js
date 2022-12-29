@@ -13,7 +13,7 @@ module.exports = (bot) => {
 
     const button = new ActionRowBuilder().addComponents(
       new ButtonBuilder()
-        .setCustomId("bot-setup")
+        .setCustomId("create-config")
         .setLabel("Set Up")
         .setStyle(ButtonStyle.Primary)
     );
