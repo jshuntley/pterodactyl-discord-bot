@@ -16,7 +16,7 @@ module.exports = {
           const cfg = require(`../../server-configs/${file}`);
           bot.statusUpdate(cfg);
         });
-      }, 10000); // Set to 1m
+      }, 60000); // Set to 1m
     }
   },
 };
