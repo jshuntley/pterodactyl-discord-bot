@@ -1,5 +1,5 @@
+.vscode
 node_modules
 server-configs/*
-
-.env
-nodemon.json
+docker-compose.yml
+.env*
