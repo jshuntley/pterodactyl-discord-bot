@@ -1,11 +1,11 @@
-FROM node:16
+FROM node:19
 
 WORKDIR /server-status-discord-bot
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm i
 
 COPY . .
 
-CMD [ "nodemon", "bot.js"]
+CMD [ "npm", "start"]
