@@ -10,7 +10,7 @@ module.exports = (bot) => {
       .setColor("#0b5394")
       .setTitle("NZCS Status Bot")
       .setDescription(
-        "Hello!\nThis message will be pinned and replaced with the server status soon.\nTo see the other bot functions type **/help**"
+        "Hello!\nThis message will be pinned and replaced with the server status soon."
       )
       .setTimestamp()
       .setFooter({ text: "Status updates en route. 🚀" });
