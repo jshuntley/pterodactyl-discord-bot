@@ -11,7 +11,13 @@ Feel free to leave a comment in discussions if you need help or are interested i
 - Node.js & NPM
 - Docker(optional)
 
-First, you\'ll need to create a .env file in the root folder. 
+First, you\'ll need to create a `.env` file and a `server-configs` folder in the root of the project.
+You can run
+```
+touch .env && mkdir server-configs
+```
+from inside the root folder to accomplish this
+
 Then, go to Discord\'s developer portal and create an application, create a bot, and get a token. **Keep this secure!** Don\'t upload it or post it anywhere! You have been warned. Next, in the developer portal, copy the client ID from the OAuth2 page and paste in the .env file as botId=YOUR-APP-ID
 
 .env should look like 
