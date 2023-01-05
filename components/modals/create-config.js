@@ -6,13 +6,12 @@ module.exports = {
   },
 
   async execute(interaction) {
+    const name = interaction.fields.getTextInputValue("configName").replace(/\s/g, "-");
     const configName =
-      interaction.fields.getTextInputValue("configName") +
-      "_" +
-      interaction.fields.getTextInputValue("serverid");
+      name + "_" + interaction.fields.getTextInputValue("serverid");
 
     const config = {
-      name: interaction.fields.getTextInputValue("configName"),
+      name: configName,
       panelfqdn: interaction.fields.getTextInputValue("panelfqdn"),
       pteroapikey: interaction.fields.getTextInputValue("pteroapikey"),
       serverid: interaction.fields.getTextInputValue("serverid"),
@@ -31,7 +30,7 @@ module.exports = {
     );
 
     await interaction.reply({
-      content: `Pterodactyl server settings saved to ${configName}.json!\nThe bot will now restart.`,
+      content: `Pterodactyl server settings saved to ${configName}.json!\nThe bot will now restart.`, ephemeral: true
     });
   },
 };

@@ -14,7 +14,12 @@ module.exports = {
       setInterval(async () => {
         configFolder.forEach((file) => {
           const cfg = require(`../../server-configs/${file}`);
-          bot.statusUpdate(cfg);
+
+          try {
+            bot.statusUpdate(cfg);
+          } catch (error) {
+            console.log(error);
+          }
         });
       }, 60000); // Set to 1m
     }

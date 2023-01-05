@@ -27,7 +27,7 @@ module.exports = (bot) => {
 
     channel.messages.pin(initMessageId);
 
-    const filePath = `./server-configs/${config.name}_${config.serverid}.json`;
+    const filePath = `./server-configs/${config.name}.json`;
 
     let cfg = fs.readFileSync(filePath);
     let data = JSON.parse(cfg);
