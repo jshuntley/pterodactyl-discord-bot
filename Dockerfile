@@ -1,10 +1,12 @@
-FROM node:19
+FROM alpine
+
+RUN apk add --update nodejs npm
 
 WORKDIR /server-status-discord-bot
 
 COPY package*.json ./
 
-RUN npm i
+RUN npm ci
 
 COPY . .
 
