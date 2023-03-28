@@ -29,6 +29,10 @@ botId=<app/bot_id>
 https://discord.com/developers/applications
 
 🚨 **YOU MUST** (for now) create a text channel in your server titled `bot-commands` for this to work.
+
+### Chat-GPT Functionality
+
+If you'd like to use this too, you'll need to perform a couple steps. First, add `OPENAI_API_KEY=` to your .env file. Second, go to https://platform.openai.com/account/api-keys and create an API key which you'll put right behind that equal sign. Lastly, create a text channel called **ask-gpt**. For now, I've hard-coded where the responses end up just to get it working.
   
 
 ### Get the bot in your server
