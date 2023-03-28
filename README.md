@@ -1,4 +1,4 @@
-# Discord Bot for Pterodactyl Server Status v2.7
+#Pterodactyl Server Status Discord Bot v2.7
 
 This project automatically updates post(s) with a Pterodactyl server's status in Discord.
   
