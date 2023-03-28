@@ -1,4 +1,4 @@
-#Pterodactyl Server Status Discord Bot v2.7
+# Pterodactyl Server Status Discord Bot v2.7
 
 This project automatically updates post(s) with a Pterodactyl server's status in Discord.
   
@@ -76,17 +76,7 @@ That\'s it! The bot should do the rest.
 
 ### Docker
 
-Once you get your .env file created you can run `docker build -t <user_name/bot_name:tag_name> .` then run that image. If you\'re looking to save your game configs permanantly to the host, you can run it with `docker run -e .env -v .:/server-status-discord-bot`
-
-You can also push the image to Docker Hub and use a docker-compose.yml file.
-```
-version:'3.8'
-services:
-	bot:
-		image: <user_name/image_name:tag_name>
-		env_file: .env
-		volumes:
-			- .:/server-status-discord-bot
+Using the docker-compose.yml file inside your projects root directory, you can pull my latest image and use this as-is once you get the initial setup completed. Otherwise, feel free to modify and change it up, add your own functionality, and build your own image.
 ```
   
 
