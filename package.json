@@ -10,13 +10,14 @@
     "push-major": "npm version major && git push"
   },
   "author": "NineZulu",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@discordjs/rest": "^1.5.0",
-    "discord-api-types": "^0.37.24",
-    "discord.js": "^14.7.1",
+    "@discordjs/rest": "^1.6.0",
+    "discord-api-types": "^0.37.36",
+    "discord.js": "^14.8.0",
     "dotenv": "^16.0.3",
-    "nodeactyl": "^3.2.2",
-    "nodemon": "^2.0.20"
+    "nodeactyl": "^3.3.0",
+    "nodemon": "^2.0.21",
+    "openai": "^3.2.1"
   }
 }
