@@ -28,7 +28,7 @@ botId=<app/bot_id>
 
 https://discord.com/developers/applications
 
-**YOU MUST** (for now) create a text channel in your server titled `bot-commands` for this to work.
+🚨 **YOU MUST** (for now) create a text channel in your server titled `bot-commands` for this to work.
   
 
 ### Get the bot in your server
@@ -60,9 +60,10 @@ You\'re going to need:
 - The ID of the Discord channel you want this to post in
 
 
-The current file setup won't work with more than one word for the filename 
-ex. `The Forest` will cause an error. 
-You can put a dash or underscore like `The-Forest or The_Forest` to get around this until I fix it.  
+~~The current file setup won't work with more than one word for the filename~~
+~~ex. `The Forest` will cause an error.~~
+~~You can put a dash or underscore like `The-Forest or The_Forest` to get around this until I fix it.~~
+This now works!
 
 Make sure you\'ve got developer mode enabled for Discord. You\'re going to need to right click on the channel to get the channel ID (for now).  
 

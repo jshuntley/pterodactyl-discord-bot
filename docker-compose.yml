@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  bot:
+    image: ninezulu/nzcs-status-bot:latest
+    restart: always
+    env_file: .env
+    volumes:
+      - .:/server-status-discord-bot
