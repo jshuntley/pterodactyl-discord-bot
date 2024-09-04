@@ -14,8 +14,8 @@
   "dependencies": {
     "@discordjs/rest": "^1.6.0",
     "discord-api-types": "^0.37.36",
+    "dotenv": "^16.4.5",
     "discord.js": "^14.15.3",
-    "dotenv": "^16.0.3",
     "nodeactyl": "^3.3.0",
     "nodemon": "^2.0.21",
     "openai": "^3.3.0"
