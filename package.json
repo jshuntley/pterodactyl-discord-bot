@@ -12,8 +12,8 @@
   "author": "NineZulu",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/rest": "^1.6.0",
-    "discord-api-types": "^0.37.36",
+    "@discordjs/rest": "^1.7.1",
+    "discord-api-types": "^0.37.98",
     "dotenv": "^16.4.5",
     "discord.js": "^14.15.3",
     "nodeactyl": "^3.3.0",
